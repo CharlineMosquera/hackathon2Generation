@@ -46,8 +46,17 @@ public class Main {
                     apellido = scanner.nextLine();
                     System.out.print("Ingrese el telefono del nuevo contacto: ");
                     telefono = scanner.nextLine();
-                    Contacto nuevoContacto = new Contacto(nombre, apellido, telefono);
-                    agenda.aniadirContacto(nuevoContacto);
+                    try {
+                        // Verifica que ningun dato este vacio para poder crear el contacto
+                        if (nombre.trim().isEmpty() || apellido.trim().isEmpty() || telefono.trim().isEmpty()) {
+                            System.out.println("Los datos proporcionados son inválidos.");
+                        } else {
+                            Contacto nuevoContacto = new Contacto(nombre, apellido, telefono);
+                            agenda.aniadirContacto(nuevoContacto);
+                        }
+                    } catch (Exception e) {
+                        System.out.println("No se pudo añadir");
+                    }
                     break;
                 case "2":
                     System.out.print("Ingrese el nombre del contacto a buscar: ");

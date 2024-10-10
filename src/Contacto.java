@@ -4,12 +4,6 @@ public class Contacto <Contacto> {
     protected String telefono;
 
     public Contacto(String nombre, String apellido, String telefono) {
-        // Verifica que ningun dato este vacio para poder crear el contacto
-        if (nombre.trim().isEmpty() || apellido.trim().isEmpty() || telefono.trim().isEmpty()) {
-            System.out.println("No se puede crear el contacto con datos vacios");
-            return;
-        }
-        System.out.println("hola");
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
