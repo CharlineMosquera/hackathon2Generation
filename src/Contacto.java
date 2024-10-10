@@ -1,12 +1,12 @@
-public class Contacto {
+public class Contacto <Contacto> {
     protected String nombre;
     protected String apellido;
     protected double telefono;
 
-    public Contacto(double telefono, String nombre, String apellido) {
-        this.telefono = telefono;
+    public Contacto(String nombre, String apellido, double telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.telefono = telefono;
     }
 
     public String getNombre() {
@@ -32,5 +32,19 @@ public class Contacto {
     public void setTelefono(double telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "Contacto{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", telefono=" + telefono +
+                '}';
+    }
+
+  //  @Override
+   // public int compareTo(Contacto other) {
+     //   return this.nombre.compareTo(other.nombre); // Or another attribute
+
 }
 
